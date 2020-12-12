@@ -15,7 +15,11 @@ func main() {
     log.SetPrefix("greetings: ")
     log.SetFlags(0)
 
-    fmt.Println(greetings.Hello("World"))
+    msg, err := greetings.Hello("World")
+    if err == nil {
+        fmt.Println(msg)
+    }
+
     fmt.Println(quote.Go())
 
     // Request a greeting message.
